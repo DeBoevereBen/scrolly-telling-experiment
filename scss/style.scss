@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
+.story {
+  margin: 0 auto;
+
+  .section-title {
+    margin-top: 0;
+  }
+}
+
+.viewport-height {
+  height: 600px;
+  height: 100vh;
+}
+
+.section-title {
+  height: calc(100vh - 60px);
+
+  .story-title,
+  .story-heading {
+    color: #fff;
+  }
+
+  .text.bottom {
+    bottom: 20px !important;
+  }
+}
+
+.section-text-over-media {
+  background: #000000 no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+
+  .text {
+    margin: 0 auto;
+    min-width: 80%;
+    padding: 5%;
+    position: absolute;
+    width: 80%;
+    z-index: 10;
+  }
+
+  .text-over-media-inner {
+    color: #fff;
+  }
+
+  .text.center {
+    left: 50%;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .text.right {
+    right: 0;
+    text-align: right;
+  }
+}
+
+.section-text-over-media.has-text {
+  .background-overlay {
+    background-color: #000;
+    bottom: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.2;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    zoom: 1;
+  }
+}
+
+.section-background {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+
+  .section-background-image {
+    bottom: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+  }
+}
+
+.section-background.section-background-fixed {
+  clip: rect(0, auto, auto, 0);
+
+  .section-background-image {
+    position: fixed;
+  }
+}
+
+[data-object-fit="cover"] {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.section-background.compat-object-fit {
+  background-size: cover;
+  background-position: center center;
+
+  .section-background-image {
+    display: none;
+  }
+}
+
+.section-text {
+  .main-column {
+    margin: 0 auto;
+  }
+}
+
+.main-column {
+  max-width: 620px;
+  padding: 20px 30px;
+  width: 100%;
+}
+
+.section-text-over-image {
+  background-attachment: fixed;
+}
+
+/* scrollama */
+.section {
+  position: relative;
+}
+
+.text-inner {
+  position: relative;
+  padding: 0;
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+.step {
+  margin: 0 auto 2rem auto;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.step:last-child {
+  margin-bottom: 0;
+}
+.step.is-active p {
+  background-color: goldenrod;
+  color: #3b3b3b;
+}
+.step p {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  background-color: #3b3b3b;
+}

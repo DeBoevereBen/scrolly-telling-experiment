@@ -1,0 +1,41 @@
+
+section {
+  border: 2px blue solid;
+  background: green;
+  padding: 10%;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+article {
+  width: 50%;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 2em;
+}
+
+section:nth-child(odd) {
+  background: red;
+}
+
+
+.sticky {
+  /* position: -webkit-sticky; */
+  position: sticky;
+  top: 0;
+}
+
+.step article {
+  overflow: hidden;
+  max-height: 500px;
+}
+
+.sticky.step article {
+  overflow: auto;
+}
+
+.step article p {
+  margin: 10% 25%;
+}
