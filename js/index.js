@@ -36,14 +36,14 @@ sectionStickyScroller
     })
     .onStepEnter(res => {
         // { element, index, direction }
-        console.log("enter: ", res.index, res.direction)
+        console.log("Top enter: ", res.index, res.direction)
         const sticky = getStickyElement(res.element);
 
         sticky.classList.add("sticky-top");
     })
     .onStepExit(res => {
         // { element, index, direction }
-        console.log("exit: ", res.index, res.direction)
+        console.log("Top exit: ", res.index, res.direction)
         const sticky = getStickyElement(res.element);
 
         sticky.classList.remove("sticky-top");
