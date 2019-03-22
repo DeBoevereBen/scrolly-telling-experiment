@@ -31,8 +31,8 @@ const sectionAbsoluteScroller = scrollama();
 sectionStickyScroller
     .setup({
         step: '.section-step',
-        offset: 0,
-        debug: true
+        offset: 0.05,
+        // debug: true // enable to see the trigger line
     })
     .onStepEnter(res => {
         // { element, index, direction }
@@ -52,8 +52,8 @@ sectionStickyScroller
 sectionAbsoluteScroller
     .setup({
         step: '.section-step',
-        offset: 1,
-        debug: true
+        offset: 0.95,
+        // debug: true // enable to see the trigger line
     })
     .onStepEnter(res => {
         // { element, index, direction }
