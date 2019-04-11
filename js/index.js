@@ -24,8 +24,8 @@ if ("objectFit" in document.documentElement.style === false) {
 }
 
 // instantiate the scrollama
-const sectionStickyScroller = scrollama();
-const sectionAbsoluteScroller = scrollama();
+var sectionStickyScroller = scrollama();
+var sectionAbsoluteScroller = scrollama();
 
 // setup the instance, pass callback functions
 sectionStickyScroller
@@ -34,17 +34,17 @@ sectionStickyScroller
         offset: 0.05,
         // debug: true // enable to see the trigger line
     })
-    .onStepEnter(res => {
+    .onStepEnter(function (res) {
         // { element, index, direction }
         console.log("Top enter: ", res.index, res.direction)
-        const sticky = getStickyElement(res.element);
+        var sticky = getStickyElement(res.element);
 
         sticky.classList.add("sticky-top");
     })
-    .onStepExit(res => {
+    .onStepExit(function (res) {
         // { element, index, direction }
         console.log("Top exit: ", res.index, res.direction)
-        const sticky = getStickyElement(res.element);
+        var sticky = getStickyElement(res.element);
 
         sticky.classList.remove("sticky-top");
     });
@@ -55,25 +55,26 @@ sectionAbsoluteScroller
         offset: 0.95,
         // debug: true // enable to see the trigger line
     })
-    .onStepEnter(res => {
+    .onStepEnter(function (res) {
         // { element, index, direction }
         console.log("bottom enter: ", res.index, res.direction)
-        const sticky = getStickyElement(res.element);
+        var sticky = getStickyElement(res.element);
 
         sticky.classList.replace("sticky-bottom", "sticky-top");
     })
-    .onStepExit(res => {
+    .onStepExit(function (res) {
         // { element, index, direction }
         console.log("bottom exit: ", res.index, res.direction)
-        const sticky = getStickyElement(res.element);
+        var sticky = getStickyElement(res.element);
 
         sticky.classList.replace("sticky-top", "sticky-bottom");
     });
 
 function getStickyElement(parent) {
-    const children = parent.childNodes;
-    let wrapper = null;
-    for (const child of children) {
+    var children = parent.childNodes;
+    var wrapper = null;
+    for (var i = 0; i < children.length; i++) {
+        var child = children[i];
         if (child.classList && child.classList.contains("background-wrapper"))
             wrapper = child;
     }
@@ -83,7 +84,7 @@ function getStickyElement(parent) {
 }
 
 // setup resize event
-window.addEventListener('resize', () => {
+window.addEventListener('resize', function () {
     sectionStickyScroller.resize();
     sectionAbsoluteScroller.resize();
 });
